@@ -1,0 +1,172 @@
+/* Reset and body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Container for text and buttons */
+.container {
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 2.5rem;
+    animation: glow 1.5s infinite;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in 1.5s forwards;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ff9a9e;
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s ease-in 2.5s forwards;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Balloons */
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 80px;
+    border-radius: 50% 50% 50% 50%;
+    animation: float 5s ease-in infinite;
+}
+
+.balloon:nth-child(1) { left: 20%; animation-duration: 6s; background-color: #ff6347; }
+.balloon:nth-child(2) { left: 30%; animation-duration: 7s; background-color: #ff69b4; }
+.balloon:nth-child(3) { left: 50%; animation-duration: 5.5s; background-color: #1e90ff; }
+.balloon:nth-child(4) { left: 70%; animation-duration: 6.5s; background-color: #32cd32; }
+.balloon:nth-child(5) { left: 80%; animation-duration: 5.7s; background-color: #ffa500; }
+
+/* Confetti */
+.confetti {
+    position: absolute;
+    top: -100px;
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+    animation: fall 3s infinite;
+}
+
+.confetti:nth-child(odd) { background-color: #f0f; }
+.confetti:nth-child(even) { background-color: #0ff; }
+
+/* Floating Wishes */
+.wish {
+    position: absolute;
+    opacity: 0;
+    font-size: 1rem;
+    color: #fff;
+    animation: floatWishes 5s linear infinite;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #fff;
+    opacity: 0.7;
+    font-style: italic;
+    animation: fadeInFooter 3s infinite alternate;
+}
+
+/* Cake Page */
+.cake-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background-color: #ffe4e1;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.candle {
+    position: absolute;
+    bottom: 60px;
+    width: 10px;
+    height: 30px;
+    background-color: #ff6347;
+    border-radius: 10px;
+    left: 30%;
+    transition: opacity 1s ease-in-out;
+}
+
+.candle:nth-child(2) { left: 50%; }
+.candle:nth-child(3) { left: 70%; }
+
+.flame {
+    position: absolute;
+    bottom: 30px;
+    width: 5px;
+    height: 10px;
+    background-color: #ffdf00;
+    border-radius: 50%;
+    animation: flame 1s infinite alternate;
+}
+
+@keyframes float {
+    0% { bottom: -100px; }
+    100% { bottom: 100vh; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; }
+    50% { text-shadow: 0 0 20px #ff6347, 0 0 30px #ff6347; }
+    100% { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; }
+}
+
+@keyframes fall {
+    0% { top: -100px; opacity: 0; }
+    100% { top: 100vh; opacity: 1; }
+}
+
+@keyframes floatWishes {
+    0% { opacity: 0; top: 90%; }
+    100% { opacity: 1; top: -10%; }
+}
+
+@keyframes fadeInFooter {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
